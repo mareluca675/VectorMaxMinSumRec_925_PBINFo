@@ -1,0 +1,13 @@
+void P(int x[], int n, int& mini, int& maxi, int& sum){
+    if(n == 0){
+        mini = x[n];
+        maxi = x[n];
+        sum = 0;
+        return;
+    }
+    
+    P(x, n - 1, mini, maxi, sum);
+    mini = min(x[n - 1], mini);
+    maxi = max(x[n - 1], maxi);
+    sum += x[n - 1];
+}
